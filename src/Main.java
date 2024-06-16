@@ -22,21 +22,23 @@ public class Main {
 
         int clientOS = 0;
         int clientDeviceYear = 2014;
-        if (clientOS == 0 && clientDeviceYear < 2015) {
+        if (clientOS == 1 && clientDeviceYear < 2015) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
         }
-        if (clientOS == 0 && clientDeviceYear >= 2015) {
+        if (clientOS == 1 && clientDeviceYear >= 2015) {
             System.out.println("Установите новую версию приложения для Android по ссылке");
-        } else if (clientOS == 1 && clientDeviceYear < 2015) {
+        } else if (clientOS == 0 && clientDeviceYear < 2015) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-        } else if (clientOS == 1 && clientDeviceYear >= 2015) {
+        } else if (clientOS == 0 && clientDeviceYear >= 2015) {
             System.out.println("Установите новую версию приложения для iOS по ссылке");
         }
         // ЗАДАЧА 3//
-        int year = 1111;
+        int year = 1588;
         if (year < 1584) {
-
+            System.out.println("В таком случае невозможно расчитать високосный год,так как его ещё не существовало");
+            return;
         }
+
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
             System.out.println(year + " год является високосным");
         } else {
@@ -44,22 +46,20 @@ public class Main {
         }
 
         // ЗАДАЧА 4//
-        int deliveryDistance = 70;
+        int deliveryDistance = 11;
         int minDelivery = 1;
-        if (deliveryDistance > 100) {
-            System.out.println("Нет доставки");
-            return;
+        if (deliveryDistance < 20) {
+            System.out.println("Потребуется дней " + minDelivery);
+        } else if (deliveryDistance >= 20 && deliveryDistance < 60) {
+            System.out.println("Потребуется дней " + (minDelivery + 1));
+        } else if (deliveryDistance >= 60 && deliveryDistance <= 100) {
+            System.out.println("Потребуется дней " + (minDelivery + 2));
+        } else {
+            System.out.println("Доставки нет");
         }
-        if (deliveryDistance > 20) {
-            minDelivery++;
-        }
-        if (deliveryDistance > 60) {
-            minDelivery++;
-        }
-        System.out.println("Доставка займет " + minDelivery + " суток");
 
 
-        // ЗАДАЧА 4//
+        // ЗАДАЧА 5//
         int monthNumber = 12;
         switch (monthNumber) {
             case 12, 1, 2:
@@ -78,8 +78,9 @@ public class Main {
                 System.out.println("Такого времени года не существует");
         }
     }
-
 }
+
+
 
 
 
